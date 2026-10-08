@@ -96,25 +96,6 @@ footer{background:#4b1f12;color:#fff;display:flex;justify-content:space-between;
 .about-quote{padding:20px;text-align:center;font-size:0;line-height:0;}
 .about-quote-reference{display:block;width:min(100%,435px);height:auto;margin:0 auto;}
 .menu-card.pink{position:relative}.menu-card.pink h3{position:absolute;left:0;right:0;top:73%;z-index:3;background:transparent!important;margin:0!important;padding:0!important;border-radius:0!important;color:#fff;font-family:'Caveat',cursive!important;font-size:31px!important;font-weight:700!important;line-height:1!important;transform:rotate(-1deg)!important;text-shadow:none!important;pointer-events:none}.menu-card.pink h3::before,.menu-card.pink h3::after{display:none!important}
-
-/* Dim Sims: match the exact image box and crop used by every other menu card. */
-#menu .menu-grid .menu-card:has(img[alt="Dim Sims"]) {
-  position: relative !important;
-  overflow: hidden !important;
-  aspect-ratio: 1.18 !important;
-}
-#menu .menu-grid .menu-card:has(img[alt="Dim Sims"]) > img {
-  display: block !important;
-  width: 100% !important;
-  height: 100% !important;
-  aspect-ratio: 1.18 !important;
-  object-fit: cover !important;
-  object-position: center top !important;
-  clip-path: inset(0 0 34% 0) !important;
-  transform: none !important;
-  margin: 0 !important;
-  vertical-align: top !important;
-}
 </style>
 <style>
 /* Final menu layout matching the approved reference image. */
@@ -239,8 +220,7 @@ footer{background:#4b1f12;color:#fff;display:flex;justify-content:space-between;
 }
 
 
-/* Consistent menu card layout: image occupies the top 68%, label the bottom 32%.
-   Do not clip the image element; size the image area and label area independently. */
+/* Definitive fix: crop the bottom of each source photo where its old label is printed. */
 #menu .menu-grid .menu-card {
   position: relative !important;
   overflow: hidden !important;
@@ -249,17 +229,13 @@ footer{background:#4b1f12;color:#fff;display:flex;justify-content:space-between;
 }
 #menu .menu-grid .menu-card > img {
   display: block !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
   width: 100% !important;
-  height: 68% !important;
-  aspect-ratio: auto !important;
+  height: 100% !important;
+  aspect-ratio: 1.18 !important;
   object-fit: cover !important;
-  object-position: center center !important;
-  clip-path: none !important;
-  margin: 0 !important;
-  border-radius: 7px 7px 0 0 !important;
+  object-position: center top !important;
+  clip-path: inset(0 0 34% 0) !important;
+  border-radius: 7px !important;
 }
 #menu .menu-grid .menu-card > h3.menu-label {
   position: absolute !important;
@@ -313,10 +289,16 @@ footer{background:#4b1f12;color:#fff;display:flex;justify-content:space-between;
 
 /* Dim Sims photo: use the exact same sizing and crop behavior as every other menu card. */
 #menu .menu-grid .menu-card:has(img[alt="Dim Sims"]) > img {
-  height: 68% !important;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1.18 !important;
+  object-fit: cover !important;
   object-position: center center !important;
   transform: none !important;
   clip-path: none !important;
+  margin: 0 !important;
+  vertical-align: top !important;
 }
 
 </style></head>

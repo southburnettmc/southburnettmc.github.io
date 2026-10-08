@@ -287,21 +287,18 @@ footer{background:#4b1f12;color:#fff;display:flex;justify-content:space-between;
 }
 
 
-/* Align the deep-fried Dim Sims photo with the other menu-card photos. */
+/* Dim Sims photo: use the exact same sizing and crop behavior as every other menu card. */
 #menu .menu-grid .menu-card:has(img[alt="Dim Sims"]) > img {
-  object-position: center top !important;
-  transform: translateY(-3px) !important;
-}
-#menu .menu-grid .menu-card:has(img[alt="Dim Sims"]) {
-  overflow: hidden !important;
-}
-
-
-/* Final Dim Sims alignment: remove accidental pale margins and use the same image positioning as peer cards. */
-#menu .menu-grid .menu-card:has(img[alt="Dim Sims"]) > img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 1.18 !important;
+  object-fit: cover !important;
   object-position: center center !important;
   transform: none !important;
-  clip-path: inset(0 0 34% 0) !important;
+  clip-path: none !important;
+  margin: 0 !important;
+  vertical-align: top !important;
 }
 
 </style></head>

@@ -200,13 +200,71 @@ document.querySelector('#booking-form').addEventListener('submit', (e) => {
 });
 </script>
 <style>
-/* Corrected menu layout: equal-size cards on desktop and mobile. */
-#menu .menu-grid{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;align-items:start!important;gap:14px!important;width:100%!important;max-width:1100px!important;margin:0 auto!important;}
-#menu .menu-card{display:block!important;position:relative!important;grid-column:auto!important;justify-self:stretch!important;width:100%!important;max-width:none!important;min-width:0!important;overflow:hidden!important;background:transparent!important;align-self:start!important;}
-#menu .menu-card img{display:block!important;width:100%!important;height:auto!important;aspect-ratio:1.18!important;object-fit:cover!important;object-position:center!important;max-width:100%!important;border-radius:7px!important;}
-#menu .menu-card.added-menu-card h3{position:absolute!important;left:0!important;right:0!important;top:73%!important;z-index:3!important;margin:0!important;padding:8px 4px!important;color:#fff!important;font-family:'Lobster',cursive!important;font-size:clamp(17px,2.1vw,28px)!important;line-height:1.05!important;text-align:center!important;transform:rotate(-1deg)!important;border-radius:2px!important;background:var(--label-color,#f2ad00)!important;text-shadow:none!important;}
-#menu .menu-card.added-menu-card.yellow{--label-color:#f2ad00} #menu .menu-card.added-menu-card.red{--label-color:#e52620} #menu .menu-card.added-menu-card.green{--label-color:#2e8c4b} #menu .menu-card.added-menu-card.blue{--label-color:#168fd4} #menu .menu-card.added-menu-card.pink{--label-color:#ec2484} #menu .menu-card.added-menu-card.purple{--label-color:#8128a8}
-@media(max-width:800px){#menu .menu-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}#menu .menu-card.added-menu-card h3{font-size:clamp(17px,4vw,24px)!important;top:72%!important}}
-@media(min-width:801px) and (max-width:1100px){#menu .menu-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important}}
+/* Stable menu layout: all cards use equal image boxes and consistent spacing. */
+#menu .menu-grid {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  align-items: start !important;
+  gap: 14px !important;
+  width: 100% !important;
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+}
+#menu .menu-card {
+  display: block !important;
+  position: relative !important;
+  grid-column: auto !important;
+  justify-self: stretch !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  align-self: start !important;
+  background: transparent !important;
+}
+#menu .menu-card img {
+  display: block !important;
+  width: 100% !important;
+  height: clamp(118px, 15vw, 190px) !important;
+  aspect-ratio: auto !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  max-width: 100% !important;
+  border-radius: 7px !important;
+}
+#menu .menu-card.added-menu-card h3 {
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  top: auto !important;
+  bottom: 8px !important;
+  z-index: 3 !important;
+  margin: 0 !important;
+  padding: 8px 4px !important;
+  color: #fff !important;
+  font-family: 'Lobster', cursive !important;
+  font-size: clamp(16px, 2vw, 25px) !important;
+  line-height: 1.05 !important;
+  text-align: center !important;
+  transform: rotate(-1deg) !important;
+  border-radius: 2px !important;
+  background: var(--label-color, #f2ad00) !important;
+  text-shadow: none !important;
+}
+#menu .menu-card.added-menu-card.yellow { --label-color: #f2ad00; }
+#menu .menu-card.added-menu-card.red { --label-color: #e52620; }
+#menu .menu-card.added-menu-card.green { --label-color: #2e8c4b; }
+#menu .menu-card.added-menu-card.blue { --label-color: #168fd4; }
+#menu .menu-card.added-menu-card.pink { --label-color: #ec2484; }
+#menu .menu-card.added-menu-card.purple { --label-color: #8128a8; }
+@media (min-width: 801px) and (max-width: 1100px) {
+  #menu .menu-grid { grid-template-columns: repeat(5, minmax(0, 1fr)) !important; gap: 10px !important; }
+  #menu .menu-card img { height: clamp(115px, 17vw, 175px) !important; }
+}
+@media (max-width: 800px) {
+  #menu .menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 10px !important; }
+  #menu .menu-card img { height: clamp(135px, 38vw, 210px) !important; }
+  #menu .menu-card.added-menu-card h3 { font-size: clamp(17px, 4vw, 24px) !important; }
+}
 </style></body>
 </html>
